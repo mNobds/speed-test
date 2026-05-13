@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Business Internet Speed Test — Download, Upload &amp; Ping | Office Network Benchmark</title>
+<meta name="description" content="Free business internet speed test. Measure download, upload, and ping (latency) instantly in your browser — no installation required. Get a line-grade assessment and see whether your office connection meets enterprise standards.">
+<meta name="keywords" content="business internet speed test, office internet speed, enterprise network speed, download upload ping test, KT business internet, fiber speed test, corporate broadband test, office network benchmark">
+<meta property="og:title" content="Business Internet Speed Test — Office Network Benchmark">
+<meta property="og:description" content="Measure download, upload &amp; ping in seconds. Free, no install. Get a grade for your office internet connection.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://kt-bizinternet.github.io/speed-test/">
+<link rel="canonical" href="https://kt-bizinternet.github.io/speed-test/">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #f0f4f8;
+    color: #1a1a1a;
+    line-height: 1.6;
+  }
+  .page-header {
+    background: linear-gradient(135deg, #003087 0%, #0050c8 100%);
+    color: #fff;
+    padding: 40px 20px 36px;
+    text-align: center;
+  }
+  .page-header .badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.18);
+    border: 1px solid rgba(255,255,255,0.35);
+    border-radius: 20px;
+    font-size: 12px;
+    padding: 3px 14px;
+    margin-bottom: 16px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .page-header h1 {
+    font-size: clamp(22px, 4vw, 30px);
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 12px;
+  }
+  .page-header p {
+    font-size: 15px;
+    opacity: 0.88;
+    max-width: 520px;
+    margin: 0 auto;
+  }
+  .widget-wrap {
+    max-width: 880px;
+    margin: 36px auto;
+    padding: 0 16px;
+  }
+  .widget-wrap iframe {
+    width: 100%;
+    height: 700px;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0,0,100,0.10);
+    display: block;
+    background: #fff;
+  }
+  .info-section {
+    max-width: 880px;
+    margin: 0 auto 40px;
+    padding: 0 16px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+  }
+  .info-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 24px 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+  .info-card .icon { font-size: 28px; margin-bottom: 12px; }
+  .info-card h2 { font-size: 15px; font-weight: 700; color: #003087; margin-bottom: 8px; }
+  .info-card p  { font-size: 13px; color: #555; line-height: 1.65; }
+  .guide-section {
+    max-width: 880px;
+    margin: 0 auto 40px;
+    padding: 0 16px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    overflow: hidden;
+  }
+  .guide-section h2 {
+    font-size: 16px;
+    font-weight: 700;
+    padding: 22px 24px 18px;
+    border-bottom: 1px solid #e8edf2;
+    color: #003087;
+  }
+  .guide-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+  .guide-table th {
+    background: #f0f4f8;
+    padding: 11px 16px;
+    text-align: left;
+    font-weight: 600;
+    color: #444;
+    border-bottom: 1px solid #e8edf2;
+  }
+  .guide-table td {
+    padding: 11px 16px;
+    border-bottom: 1px solid #f0f4f8;
+    color: #333;
+  }
+  .guide-table tr:last-child td { border-bottom: none; }
+  .tag {
+    display: inline-block;
+    padding: 2px 9px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 700;
+  }
+  .tag-great  { background: #dcfce7; color: #166534; }
+  .tag-good   { background: #dbeafe; color: #1e40af; }
+  .tag-fair   { background: #fef9c3; color: #854d0e; }
+  .tag-poor   { background: #fee2e2; color: #991b1b; }
+  .faq-section {
+    max-width: 880px;
+    margin: 0 auto 40px;
+    padding: 0 16px;
+  }
+  .faq-section h2 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #003087;
+    margin-bottom: 14px;
+  }
+  .faq-item {
+    background: #fff;
+    border-radius: 8px;
+    padding: 18px 20px;
+    margin-bottom: 10px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  }
+  .faq-item h3 { font-size: 14px; font-weight: 600; margin-bottom: 6px; color: #1a1a1a; }
+  .faq-item p  { font-size: 13px; color: #555; line-height: 1.65; }
+  .cta-section {
+    max-width: 880px;
+    margin: 0 auto 56px;
+    padding: 0 16px;
+  }
+  .cta-box {
+    background: linear-gradient(135deg, #003087, #0050c8);
+    border-radius: 12px;
+    padding: 34px 28px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .cta-box .cta-text h3 { font-size: 18px; font-weight: 700; margin-bottom: 7px; }
+  .cta-box .cta-text p  { font-size: 13px; opacity: 0.88; }
+  .cta-box a {
+    display: inline-block;
+    background: #fff;
+    color: #003087;
+    font-weight: 700;
+    font-size: 14px;
+    padding: 12px 26px;
+    border-radius: 6px;
+    text-decoration: none;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .cta-box a:hover { background: #e8f0fe; }
+  .page-footer {
+    text-align: center;
+    padding: 24px 16px;
+    font-size: 12px;
+    color: #888;
+    border-top: 1px solid #e2e8f0;
+  }
+  .page-footer a { color: #0050c8; text-decoration: none; }
+  @media (max-width: 600px) {
+    .widget-wrap iframe { height: 600px; }
+    .cta-box { flex-direction: column; text-align: center; }
+    .cta-box a { width: 100%; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<header class="page-header">
+  <div class="badge">Official KT Business Internet Partner</div>
+  <h1>Business Internet Speed Test<br>Download · Upload · Ping — Instant Results</h1>
+  <p>No installation needed. Run directly in your browser and get an automatic grade for your office connection in seconds.</p>
+</header>
+
+<div class="widget-wrap">
+  <iframe
+    src="https://kt-bizinternet.com/pages/speed-test.php?embed=1"
+    title="Business Internet Speed Test Widget — kt-bizinternet.com"
+    loading="lazy"
+    allowfullscreen>
+  </iframe>
+</div>
+
+<section class="info-section">
+  <div class="info-card">
+    <div class="icon">⬇️</div>
+    <h2>Download Speed</h2>
+    <p>Transfers 200 MB from a Cloudflare CDN endpoint to measure real-world download throughput — directly reflects cloud file access, software updates, and video streaming performance.</p>
+  </div>
+  <div class="info-card">
+    <div class="icon">⬆️</div>
+    <h2>Upload Speed</h2>
+    <p>Pushes 40 MB to the test server and calculates your upload rate. Critical for video conferencing, cloud backup, ERP data sync, and shared document workflows.</p>
+  </div>
+  <div class="info-card">
+    <div class="icon">📡</div>
+    <h2>Ping &amp; Latency</h2>
+    <p>Measures round-trip time to KT DNS, Google, and Cloudflare. Lower is better. Under 30 ms is ideal for real-time applications such as VoIP calls and remote desktop.</p>
+  </div>
+</section>
+
+<section class="guide-section">
+  <h2>Speed Grade Reference — What Your Results Mean</h2>
+  <table class="guide-table">
+    <thead>
+      <tr>
+        <th>Download Speed</th>
+        <th>Grade</th>
+        <th>Typical Use Case</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>500 Mbps or above</td>
+        <td><span class="tag tag-great">Excellent</span></td>
+        <td>Large offices, data-center connectivity, 4K video conferencing at scale</td>
+      </tr>
+      <tr>
+        <td>100 – 499 Mbps</td>
+        <td><span class="tag tag-good">Good</span></td>
+        <td>SMB general operations, cloud ERP, video editing, multi-user VoIP</td>
+      </tr>
+      <tr>
+        <td>50 – 99 Mbps</td>
+        <td><span class="tag tag-fair">Fair</span></td>
+        <td>Small offices, basic video calls, email and web browsing</td>
+      </tr>
+      <tr>
+        <td>Below 50 Mbps</td>
+        <td><span class="tag tag-poor">Needs Upgrade</span></td>
+        <td>Consider upgrading to a higher-tier plan or dedicated leased line</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="faq-section">
+  <h2>Frequently Asked Questions</h2>
+  <div class="faq-item">
+    <h3>Why does my speed test result differ from my contracted plan speed?</h3>
+    <p>Contracted speeds are theoretical maximums measured under ideal conditions. Actual throughput depends on internal LAN wiring, Wi-Fi interference, the number of concurrent users, and peak-hour network congestion. If your measured speed is consistently below 70% of your plan, consider a line inspection or plan upgrade.</p>
+  </div>
+  <div class="faq-item">
+    <h3>What is a good ping for business use?</h3>
+    <p>Under 30 ms is considered excellent for all business applications including VoIP and cloud ERP. 30–80 ms is acceptable for standard web and email. Over 100 ms may cause noticeable lag in real-time collaboration tools and video conferencing.</p>
+  </div>
+  <div class="faq-item">
+    <h3>Should I use Wi-Fi or a wired connection for the test?</h3>
+    <p>For the most accurate result, connect via Ethernet directly to your router or switch. Wi-Fi results are valid but introduce wireless overhead — typically 20–40% lower than wired speeds on the same connection.</p>
+  </div>
+  <div class="faq-item">
+    <h3>What is a dedicated leased line and when do I need one?</h3>
+    <p>A leased line (dedicated line) provides guaranteed symmetric bandwidth exclusively for your business — no contention with other users. It is recommended when your operations require consistent upload speeds, a fixed IP, or SLA-backed uptime (e.g., VPN gateways, hosted servers, point-of-sale systems).</p>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="cta-box">
+    <div class="cta-text">
+      <h3>Not happy with your results?</h3>
+      <p>Free consultation from KT's official business internet partner — line analysis, plan comparison, and a tailored recommendation at no cost.</p>
+    </div>
+    <a href="https://kt-bizinternet.com/pages/consult.php?utm_source=github&utm_medium=widget&utm_campaign=speed-test-en" target="_blank" rel="noopener">
+      Get Free Advice →
+    </a>
+  </div>
+</section>
+
+<footer class="page-footer">
+  <p>This speed test tool is provided by <a href="https://kt-bizinternet.com" target="_blank" rel="noopener">kt-bizinternet.com</a> — official KT Business Internet partner, iSystem Co., Ltd.</p>
+  <p style="margin-top:6px;"><a href="https://kt-bizinternet.com/pages/internet.php" target="_blank" rel="noopener">Business Internet Plans</a> · <a href="https://kt-bizinternet.com/pages/dedicated-line.php" target="_blank" rel="noopener">Dedicated Leased Line</a> · <a href="https://kt-bizinternet.com/pages/consult.php" target="_blank" rel="noopener">Free Consultation</a></p>
+</footer>
+
+</body>
+</html>
