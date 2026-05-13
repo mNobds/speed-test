@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>インターネット速度測定 — ネット速度・Ping無料チェック</title>
+<meta name="description" content="インターネット速度を即時測定。ダウンロード・アップロード速度とPing遅延をリアルタイム計測。無料・インストール不要のネットワーク診断ツール。オフィス・自宅どちらでも使用可能。">
+<meta name="keywords" content="インターネット速度測定, ネット速度テスト, 回線速度チェック, Ping測定, ダウンロード速度, アップロード速度, Wi-Fi速度測定, ネットワーク診断">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://kt-bizinternet.com/intl/ja/speed-test">
+<link rel="alternate" hreflang="ko"        href="https://kt-bizinternet.com/pages/speed-test.php">
+<link rel="alternate" hreflang="en"        href="https://kt-bizinternet.com/intl/en/speed-test">
+<link rel="alternate" hreflang="ja"        href="https://kt-bizinternet.com/intl/ja/speed-test">
+<link rel="alternate" hreflang="x-default" href="https://kt-bizinternet.com/pages/speed-test.php">
+<meta property="og:type"        content="website">
+<meta property="og:title"       content="インターネット速度測定 — ネット速度・Ping無料チェック">
+<meta property="og:description" content="ダウンロード・アップロード速度とPing遅延をリアルタイム計測。無料・インストール不要のネットワーク診断ツール。">
+<meta property="og:url"         content="https://mnobds.github.io/speed-test/ja/">
+<meta property="og:image"       content="https://kt-bizinternet.com/assets/img/og_internet.jpg">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"オフィスに必要なダウンロード速度はどれくらいですか？","acceptedAnswer":{"@type":"Answer","text":"5人以上が同時利用するオフィスでは100Mbps以上が推奨されます。ビデオ会議は参加者1人あたり最低10Mbps、4Kストリーミングは1台あたり25Mbpsが必要です。多拠点・コールセンター環境では帯域保証型の専用線が適しています。"}},{"@type":"Question","name":"ビデオ通話に必要なアップロード速度は？","acceptedAnswer":{"@type":"Answer","text":"Zoom・Microsoft Teams・Google Meetの安定した通話には、同時通話1件あたり最低5Mbpsのアップロード速度が必要です。グループ通話や画面共有には10Mbps以上を推奨します。アップロード速度が低い非対称プランは通話品質低下の主な原因になります。"}},{"@type":"Question","name":"インターネットが遅くなる原因は何ですか？","acceptedAnswer":{"@type":"Answer","text":"主な原因：ピーク時間帯の回線混雑、ルーターの過負荷・古いファームウェア、Wi-Fi電波干渉、接続端末の多さ、ISPによる速度制限、ケーブルの劣化、局舎からの距離などが挙げられます。この速度測定ツールで問題がローカルネットワーク側かISP回線側かを切り分けることができます。"}},{"@type":"Question","name":"Ping（応答時間・レイテンシ）とは何ですか？","acceptedAnswer":{"@type":"Answer","text":"Pingはデータパケットの往復時間をミリ秒（ms）で示します。低いほど高速です。20ms以下は優秀、20〜50msは良好、100ms超えはビデオ通話・VoIP・リアルタイムアプリで遅延として体感されます。Pingが高い原因は回線混雑や長い経路が多いです。"}},{"@type":"Question","name":"ジッターとは何ですか？なぜ重要なのですか？","acceptedAnswer":{"@type":"Answer","text":"ジッターは複数回のPing測定値のばらつきです。安定した接続では10ms以下です。ジッターが30ms以上になると音声・映像が途切れ、パケットロスが発生します。Wi-Fiや混雑した共有ネットワークでジッターが高くなりやすいです。"}},{"@type":"Question","name":"Wi-Fiと有線（LAN）接続で速度が違うのはなぜ？","acceptedAnswer":{"@type":"Answer","text":"Wi-Fi信号は壁・床などの障害物、近隣ネットワークの電波干渉、ルーターからの距離によって減衰します。有線LANケーブル接続は常にWi-Fiより安定した速度が得られます。オフィスで安定したパフォーマンスが必要な場合は、構内通信工事による有線LAN環境の整備を推奨します。"}},{"@type":"Question","name":"契約速度より実測値が低いのはなぜですか？","acceptedAnswer":{"@type":"Answer","text":"インターネットの契約速度は「最大値（ベストエフォート）」です。実際の速度は時間帯の回線混雑、ルーター・モデムの性能、同一セグメントの同時利用者数、構内ケーブルの品質、局舎からの距離・媒体によって変動します。共有型ブロードバンドはピーク時に特に速度低下しやすいです。"}},{"@type":"Question","name":"インターネットが遅い時の改善方法は？","acceptedAnswer":{"@type":"Answer","text":"以下の手順を試してください：（1）ルーターとモデムを再起動。（2）Wi-Fiから有線LANに切り替え。（3）バックグラウンドのダウンロード・更新を停止。（4）ルーターファームウェアを更新。（5）接続端末数を減らす。（6）ケーブルの損傷を確認。これらを試しても改善しない場合はISPに回線点検を依頼してください。"}},{"@type":"Question","name":"この速度測定ツールの精度はどれくらいですか？","acceptedAnswer":{"@type":"Answer","text":"Cloudflare CDN（200MBダウンロード・3並列ストリーム）とM-Lab NDT7 WebSocket（アップロード）を使用し、複数回計測の平均値を算出します。TR-296・RFC-6349準拠でウォームアップ区間を除外し、安定区間のみで算出するため精度は±1%以内です。最も正確な結果を得るには有線接続・他のトラフィックがない状態でテストしてください。"}},{"@type":"Question","name":"ダウンロード速度とアップロード速度の違いは何ですか？","acceptedAnswer":{"@type":"Answer","text":"ダウンロード速度はデータを受信する速度で、Webブラウジング・動画視聴・ファイルダウンロード・ソフトウェア更新に影響します。アップロード速度はデータを送信する速度で、ビデオ通話・ファイル共有・クラウドバックアップ・リモートデスクトップに影響します。多くのプランはダウンロード速度が速い非対称型です。動画制作や大容量ファイル転送が多い業務には対称型プランや専用線が適しています。"}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"インターネット速度測定","description":"ダウンロード・アップロード速度とPing遅延を計測する無料ネットワーク診断ツール。","url":"https://kt-bizinternet.com/intl/ja/speed-test","inLanguage":"ja"}</script>
+<link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+<link rel="stylesheet" href="https://kt-bizinternet.com/assets/css/design_tokens.css">
+<link rel="stylesheet" href="https://kt-bizinternet.com/assets/css/font.css">
+<link rel="stylesheet" href="https://kt-bizinternet.com/assets/css/page_layout.css">
+<link rel="stylesheet" href="https://kt-bizinternet.com/assets/css/site_optimization.css">
+<link rel="stylesheet" href="https://kt-bizinternet.com/assets/pages/speed-test/speed-test.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      media="print" onload="this.media='all';this.onload=null;">
+<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"></noscript>
+<style>
+*,*::before,*::after{box-sizing:border-box}
+.stx-standalone-wrap{max-width:960px;margin:0 auto;padding:0 20px}
+.stx-topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 20px;border-bottom:1px solid var(--color-border,#e2e8f0);max-width:960px;margin:0 auto}
+.stx-topbar__title{font-size:1rem;font-weight:700;color:var(--color-text,#1e293b);display:flex;align-items:center;gap:8px}
+.stx-topbar__title i{color:#0050c8}
+.stx-lang-switch{display:flex;gap:6px}
+.stx-lang-switch a{font-size:.8rem;padding:3px 9px;border-radius:20px;border:1px solid #cbd5e1;color:#64748b;text-decoration:none;transition:all .15s}
+.stx-lang-switch a.active,.stx-lang-switch a:hover{background:#0050c8;border-color:#0050c8;color:#fff}
+.stx-mini-footer{text-align:center;padding:24px 20px;font-size:.8rem;color:#94a3b8;border-top:1px solid #e2e8f0;margin-top:40px}
+.stx-mini-footer a{color:#64748b;text-decoration:none}
+.stx-mini-footer a:hover{color:#0050c8}
+.stx-faq{max-width:960px;margin:40px auto 0;padding:0 20px}
+.stx-faq__title{font-size:1.15rem;font-weight:700;color:#1e293b;margin-bottom:18px;padding-bottom:12px;border-bottom:2px solid #e2e8f0}
+.stx-faq-list{display:flex;flex-direction:column;gap:6px}
+.stx-faq-item{border:1px solid #e2e8f0;border-radius:8px;overflow:hidden;transition:border-color .15s}
+.stx-faq-item[open]{border-color:#0050c8}
+.stx-faq-q{padding:13px 18px;font-size:.9rem;font-weight:600;color:#1e293b;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px;background:#fff}
+.stx-faq-q::-webkit-details-marker{display:none}
+.stx-faq-q::after{content:'+';font-size:1.1rem;color:#94a3b8;flex-shrink:0;font-weight:400}
+.stx-faq-item[open] .stx-faq-q{color:#0050c8}
+.stx-faq-item[open] .stx-faq-q::after{content:'−';color:#0050c8}
+.stx-faq-a{padding:0 18px 14px;font-size:.86rem;color:#475569;line-height:1.75;background:#fff}
+.stx-embed-gen{max-width:960px;margin:36px auto 0;padding:0 20px 48px}
+.stx-embed-gen__title{font-size:1.1rem;font-weight:700;color:#1e293b;margin:0 0 8px;display:flex;align-items:center;gap:8px}
+.stx-embed-gen__title i{color:#0050c8}
+.stx-embed-gen__desc{font-size:.88rem;color:#64748b;margin:0 0 18px}
+.stx-embed-gen__opts{display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px;margin-bottom:16px}
+.stx-embed-gen__opts-label{font-size:.78rem;font-weight:700;color:#475569;letter-spacing:.1em;text-transform:uppercase}
+.stx-embed-gen__opt{display:flex;align-items:center;gap:6px;font-size:.85rem;color:#334155;cursor:pointer;padding:5px 10px;border:1px solid #e2e8f0;border-radius:6px;transition:border-color .15s,background .15s}
+.stx-embed-gen__opt:has(input:checked){border-color:#0050c8;background:#eff6ff;color:#0050c8;font-weight:600}
+.stx-embed-gen__opt input{accent-color:#0050c8}
+.stx-embed-gen__box{background:#0f172a;border-radius:10px;overflow:hidden}
+.stx-embed-gen__box-head{display:flex;align-items:center;justify-content:space-between;padding:10px 16px;background:#1e293b}
+.stx-embed-gen__box-label{font-size:.7rem;font-weight:700;color:#94a3b8;letter-spacing:.14em;text-transform:uppercase}
+.stx-embed-gen__copy-btn{display:inline-flex;align-items:center;gap:5px;padding:5px 12px;background:#0066cc;color:#fff;border:0;border-radius:5px;font-size:.8rem;font-weight:700;cursor:pointer;font-family:inherit;transition:background .15s}
+.stx-embed-gen__copy-btn:hover{background:#003d7a}
+.stx-embed-gen__copy-btn.copied{background:#16a34a}
+.stx-embed-gen__pre{margin:0;padding:16px 18px;font-size:.78rem;line-height:1.7;color:#e2e8f0;font-family:'JetBrains Mono','SF Mono',Menlo,Consolas,monospace;white-space:pre-wrap;word-break:break-all}
+.stx-embed-gen__note{font-size:.75rem;color:#94a3b8;margin:10px 0 0}
+.stx-embed-gen__note i{color:#16a34a}
+</style>
+<link rel="icon" href="https://kt-bizinternet.com/favicon.ico">
+</head>
+<body>
+
+<header>
+  <div class="stx-topbar">
+    <div class="stx-topbar__title">
+      <i class="fas fa-tachometer-alt"></i>
+      インターネット速度測定
+    </div>
+    <nav class="stx-lang-switch" aria-label="言語">
+      <a href="https://kt-bizinternet.com/pages/speed-test.php">한국어</a>
+      <a href="https://mnobds.github.io/speed-test/">EN</a>
+      <a href="https://mnobds.github.io/speed-test/ja/" class="active">日本語</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<div class="stx-standalone-wrap">
+
+<div class="kt-section-wrapper kt-section-wrapper-1" id="stx-tool" style="padding-top:24px">
+  <div class="kt-section-inner">
+    <section aria-labelledby="stx-tool-title">
+      <div class="kt-internet-section-header stx-tool-header">
+        <div class="stx-tool-header__main">
+          <div class="stx-tool-header__eyebrow-row">
+            <span class="kt-mw-eyebrow">Speed Measurement Tool</span>
+            <span class="stx-tool-header__chip stx-tool-header__chip--ver">v2.0</span>
+            <span class="stx-tool-header__chip stx-tool-header__chip--status">
+              <span class="stx-tool-header__dot" aria-hidden="true"></span>READY
+            </span>
+          </div>
+          <h1 id="stx-tool-title">インターネット速度測定</h1>
+          <p>ダウンロード → アップロード → Ping・ジッターの順に自動測定します。測定中は大容量ダウンロードを停止してください。</p>
+        </div>
+        <aside class="stx-tool-header__aside" aria-label="測定パートナー">
+          <div class="stx-tool-header__partner">
+            <span class="stx-tool-header__partner-label">Measurement Partner</span>
+            <strong class="stx-tool-header__partner-name">Cloudflare CDN · M-Lab NDT7</strong>
+            <span class="stx-tool-header__partner-sub">285+ PoP グローバル分散 · 公開インフラ</span>
+          </div>
+        </aside>
+      </div>
+
+      <div class="stx-tool__inner">
+        <div class="stx-tool__meta">
+          <div class="stx-tool__meta-item"><i class="fas fa-shield-alt"></i><span>Cloudflare CDN でダウンロード高精度計測</span></div>
+          <div class="stx-tool__meta-item"><i class="fas fa-globe-asia"></i><span>M-Lab NDT7 WebSocket アップロード計測</span></div>
+          <div class="stx-tool__meta-item"><i class="fas fa-user-secret"></i><span>匿名計測 · サーバーにデータを保存しない</span></div>
+        </div>
+
+        <section class="stx-tech-specs" aria-label="測定仕様">
+          <div class="stx-tech-specs__head">
+            <div class="stx-tech-specs__head-text">
+              <span class="stx-tech-specs__label">Technical Specifications</span>
+              <span class="stx-tech-specs__sub">TR-296 フローモデル準拠</span>
+            </div>
+            <span class="stx-tech-specs__seal"><i class="fas fa-shield-alt"></i> Verified</span>
+          </div>
+          <div class="stx-tech-specs__grid">
+            <div class="stx-tech-specs__item">
+              <span class="stx-tech-specs__item-key">ダウンロード</span>
+              <span class="stx-tech-specs__item-val">200<small> MB</small></span>
+              <span class="stx-tech-specs__item-note">3ストリーム並列 · ウォームアップ除外</span>
+            </div>
+            <div class="stx-tech-specs__item">
+              <span class="stx-tech-specs__item-key">アップロード</span>
+              <span class="stx-tech-specs__item-val">NDT7<small> WebSocket</small></span>
+              <span class="stx-tech-specs__item-note">WebSocket · ウォームアップ除外</span>
+            </div>
+            <div class="stx-tech-specs__item">
+              <span class="stx-tech-specs__item-key">Ping・ジッター</span>
+              <span class="stx-tech-specs__item-val">6<small>回平均</small></span>
+              <span class="stx-tech-specs__item-note">Cloudflare直接 · ITU-T G.107</span>
+            </div>
+            <div class="stx-tech-specs__item">
+              <span class="stx-tech-specs__item-key">精度</span>
+              <span class="stx-tech-specs__item-val">±1<small>%以内</small></span>
+              <span class="stx-tech-specs__item-note">安定区間のみ計算</span>
+            </div>
+            <div class="stx-tech-specs__action">
+              <button type="button" class="stx-btn stx-btn--start" id="stx-start-btn">
+                <i class="fas fa-play"></i> 測定開始
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <div class="stx-measure-canvas">
+        <div class="stx-gauges">
+          <div class="stx-gauge stx-gauge--down">
+            <svg viewBox="0 0 100 100" class="stx-gauge__svg" aria-hidden="true">
+              <defs><linearGradient id="stx-grad-down" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#22d3ee"/><stop offset="100%" stop-color="#0066cc"/></linearGradient></defs>
+              <g class="stx-gauge__ticks"><line x1="50" y1="3" x2="50" y2="8" transform="rotate(0 50 50)"/><line x1="50" y1="3" x2="50" y2="6" transform="rotate(15 50 50)"/><line x1="50" y1="3" x2="50" y2="6" transform="rotate(30 50 50)"/><line x1="50" y1="3" x2="50" y2="6" transform="rotate(45 50 50)"/><line x1="50" y1="3" x2="50" y2="6" transform="rotate(60 50 50)"/><line x1="50" y1="3" x2="50" y2="6" transform="rotate(75 50 50)"/><line x1="50" y1="3" x2="50" y2="8" transform="rotate(90 50 50)"/><line x1="50" y1="3" x2="50" y2="6" transform="rotate(105 50 50)"/><line x1="50" y1="3" x2="50" y2="6" transform="rotate(120 50 50)"/><line x1="50" y1="3" x2="50" y2="6" transform="rotate(135 50 50)"/><line x1="50" y1="3" x2="50" y2="6" transform="rotate(150 50 50)"/><line x1="50" y1="3" x2="50" y2="6" transform="rotate(165 50 50)"/><line x1="50" y1="3" x2="50" y2="8" transform="rotate(180 50 50)"/><line x1="50" y1="3" x2="50" y2="6" transform="rotate(195 50 50)"/><line x1="50" y1="3" x2="50" y2="6" transform="rotate(210 50 50)"/><line x1="50" y1="3" x2="50" y2="6" transform="rotate(225 50 50)"/><line x1="50" y1="3" x2="50" y2="6" transform="rotate(240 50 50)"/><line x1="50" y1="3" x2="50" y2="6" transform="rotate(255 50 50)"/><line x1="50" y1="3" x2="50" y2="8" transform="rotate(270 50 50)"/><line x1="50" y1="3" x2="50" y2="6" transform="rotate(285 50 50)"/><line x1="50" y1="3" x2="50" y2="6" transform="rotate(300 50 50)"/><line x1="50" y1="3" x2="50" y2="6" transform="rotate(315 50 50)"/><line x1="50" y1="3" x2="50" y2="6" transform="rotate(330 50 50)"/><line x1="50" y1="3" x2="50" y2="6" transform="rotate(345 50 50)"/></g>
+              <circle cx="50" cy="50" r="42" class="stx-gauge__bg"/>
+              <circle cx="50" cy="50" r="42" class="stx-gauge__arc" id="stx-down-arc" transform="rotate(-90 50 50)"/>
+            </svg>
+            <div class="stx-gauge__center">
+              <div class="stx-gauge__icon"><i class="fas fa-cloud-download-alt"></i></div>
+              <div class="stx-gauge__num"><span id="stx-down-val">0.0</span><span class="stx-gauge__unit">Mbps</span></div>
+              <div class="stx-gauge__label">ダウンロード</div>
+              <div class="stx-gauge__hint">推奨 100M+</div>
+            </div>
+          </div>
+          <div class="stx-gauge stx-gauge--up">
+            <svg viewBox="0 0 100 100" class="stx-gauge__svg" aria-hidden="true">
+              <defs><linearGradient id="stx-grad-up" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#4ade80"/><stop offset="100%" stop-color="#16a34a"/></linearGradient></defs>
+              <g class="stx-gauge__ticks"><line x1="50" y1="3" x2="50" y2="8" transform="rotate(0 50 50)"/><line x1="50" y1="3" x2="50" y2="6" transform="rotate(15 50 50)"/><line x1="50" y1="3" x2="50" y2="6" transform="rotate(30 50 50)"/><line x1="50" y1="3" x2="50" y2="6" transform="rotate(45 50 50)"/><line x1="50" y1="3" x2="50" y2="6" transform="rotate(60 50 50)"/><line x1="50" y1="3" x2="50" y2="6" transform="rotate(75 50 50)"/><line x1="50" y1="3" x2="50" y2="8" transform="rotate(90 50 50)"/><line x1="50" y1="3" x2="50" y2="6" transform="rotate(105 50 50)"/><line x1="50" y1="3" x2="50" y2="6" transform="rotate(120 50 50)"/><line x1="50" y1="3" x2="50" y2="6" transform="rotate(135 50 50)"/><line x1="50" y1="3" x2="50" y2="6" transform="rotate(150 50 50)"/><line x1="50" y1="3" x2="50" y2="6" transform="rotate(165 50 50)"/><line x1="50" y1="3" x2="50" y2="8" transform="rotate(180 50 50)"/><line x1="50" y1="3" x2="50" y2="6" transform="rotate(195 50 50)"/><line x1="50" y1="3" x2="50" y2="6" transform="rotate(210 50 50)"/><line x1="50" y1="3" x2="50" y2="6" transform="rotate(225 50 50)"/><line x1="50" y1="3" x2="50" y2="6" transform="rotate(240 50 50)"/><line x1="50" y1="3" x2="50" y2="6" transform="rotate(255 50 50)"/><line x1="50" y1="3" x2="50" y2="8" transform="rotate(270 50 50)"/><line x1="50" y1="3" x2="50" y2="6" transform="rotate(285 50 50)"/><line x1="50" y1="3" x2="50" y2="6" transform="rotate(300 50 50)"/><line x1="50" y1="3" x2="50" y2="6" transform="rotate(315 50 50)"/><line x1="50" y1="3" x2="50" y2="6" transform="rotate(330 50 50)"/><line x1="50" y1="3" x2="50" y2="6" transform="rotate(345 50 50)"/></g>
+              <circle cx="50" cy="50" r="42" class="stx-gauge__bg"/>
+              <circle cx="50" cy="50" r="42" class="stx-gauge__arc" id="stx-up-arc" transform="rotate(-90 50 50)"/>
+            </svg>
+            <div class="stx-gauge__center">
+              <div class="stx-gauge__icon"><i class="fas fa-cloud-upload-alt"></i></div>
+              <div class="stx-gauge__num"><span id="stx-up-val">0.0</span><span class="stx-gauge__unit">Mbps</span></div>
+              <div class="stx-gauge__label">アップロード</div>
+              <div class="stx-gauge__hint">推奨 50M+</div>
+            </div>
+          </div>
+          <div class="stx-gauge stx-gauge--ping">
+            <svg viewBox="0 0 100 100" class="stx-gauge__svg" aria-hidden="true">
+              <defs><linearGradient id="stx-grad-ping" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#fbbf24"/><stop offset="100%" stop-color="#f59e0b"/></linearGradient></defs>
+              <g class="stx-gauge__ticks"><line x1="50" y1="3" x2="50" y2="8" transform="rotate(0 50 50)"/><line x1="50" y1="3" x2="50" y2="6" transform="rotate(15 50 50)"/><line x1="50" y1="3" x2="50" y2="6" transform="rotate(30 50 50)"/><line x1="50" y1="3" x2="50" y2="6" transform="rotate(45 50 50)"/><line x1="50" y1="3" x2="50" y2="6" transform="rotate(60 50 50)"/><line x1="50" y1="3" x2="50" y2="6" transform="rotate(75 50 50)"/><line x1="50" y1="3" x2="50" y2="8" transform="rotate(90 50 50)"/><line x1="50" y1="3" x2="50" y2="6" transform="rotate(105 50 50)"/><line x1="50" y1="3" x2="50" y2="6" transform="rotate(120 50 50)"/><line x1="50" y1="3" x2="50" y2="6" transform="rotate(135 50 50)"/><line x1="50" y1="3" x2="50" y2="6" transform="rotate(150 50 50)"/><line x1="50" y1="3" x2="50" y2="6" transform="rotate(165 50 50)"/><line x1="50" y1="3" x2="50" y2="8" transform="rotate(180 50 50)"/><line x1="50" y1="3" x2="50" y2="6" transform="rotate(195 50 50)"/><line x1="50" y1="3" x2="50" y2="6" transform="rotate(210 50 50)"/><line x1="50" y1="3" x2="50" y2="6" transform="rotate(225 50 50)"/><line x1="50" y1="3" x2="50" y2="6" transform="rotate(240 50 50)"/><line x1="50" y1="3" x2="50" y2="6" transform="rotate(255 50 50)"/><line x1="50" y1="3" x2="50" y2="8" transform="rotate(270 50 50)"/><line x1="50" y1="3" x2="50" y2="6" transform="rotate(285 50 50)"/><line x1="50" y1="3" x2="50" y2="6" transform="rotate(300 50 50)"/><line x1="50" y1="3" x2="50" y2="6" transform="rotate(315 50 50)"/><line x1="50" y1="3" x2="50" y2="6" transform="rotate(330 50 50)"/><line x1="50" y1="3" x2="50" y2="6" transform="rotate(345 50 50)"/></g>
+              <circle cx="50" cy="50" r="42" class="stx-gauge__bg"/>
+              <circle cx="50" cy="50" r="42" class="stx-gauge__arc" id="stx-ping-arc" transform="rotate(-90 50 50)"/>
+            </svg>
+            <div class="stx-gauge__center">
+              <div class="stx-gauge__icon"><i class="fas fa-stopwatch"></i></div>
+              <div class="stx-gauge__num"><span id="stx-ping-val">—</span><span class="stx-gauge__unit">ms</span></div>
+              <div class="stx-gauge__label">Ping</div>
+              <div class="stx-gauge__hint">良好：50ms以下</div>
+            </div>
+          </div>
+        </div>
+        <div class="stx-livegraph" aria-hidden="true">
+          <div class="stx-livegraph__head">
+            <span class="stx-livegraph__label">REAL-TIME THROUGHPUT</span>
+            <div class="stx-livegraph__legend">
+              <span class="stx-livegraph__legend-item stx-livegraph__legend-item--down"><span class="dot"></span>ダウンロード</span>
+              <span class="stx-livegraph__legend-item stx-livegraph__legend-item--up"><span class="dot"></span>アップロード</span>
+            </div>
+          </div>
+          <svg class="stx-livegraph__svg" viewBox="0 0 600 120" preserveAspectRatio="none">
+            <defs>
+              <linearGradient id="stx-graph-grad-down" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#22d3ee" stop-opacity="0.45"/><stop offset="100%" stop-color="#22d3ee" stop-opacity="0"/></linearGradient>
+              <linearGradient id="stx-graph-grad-up" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#4ade80" stop-opacity="0.45"/><stop offset="100%" stop-color="#4ade80" stop-opacity="0"/></linearGradient>
+            </defs>
+            <g class="stx-livegraph__grid"><line x1="0" y1="30" x2="600" y2="30"/><line x1="0" y1="60" x2="600" y2="60"/><line x1="0" y1="90" x2="600" y2="90"/></g>
+            <path id="stx-graph-down-area" class="stx-livegraph__area stx-livegraph__area--down" d="M0,120 L0,120 L600,120 Z" fill="url(#stx-graph-grad-down)"/>
+            <path id="stx-graph-down-line" class="stx-livegraph__line stx-livegraph__line--down" d="M0,120 L600,120" fill="none" stroke="#22d3ee" stroke-width="1.8"/>
+            <path id="stx-graph-up-area" class="stx-livegraph__area stx-livegraph__area--up" d="M0,120 L0,120 L600,120 Z" fill="url(#stx-graph-grad-up)"/>
+            <path id="stx-graph-up-line" class="stx-livegraph__line stx-livegraph__line--up" d="M0,120 L600,120" fill="none" stroke="#4ade80" stroke-width="1.8"/>
+          </svg>
+          <div class="stx-livegraph__axis" aria-hidden="true"><span>0s</span><span>経過時間</span><span>~120s</span></div>
+        </div>
+        </div>
+
+        <ol class="stx-phases" role="list">
+          <li class="stx-phase" data-phase="down"><span class="stx-phase__num"><i class="fas fa-cloud-download-alt"></i></span><span class="stx-phase__name">ダウンロード</span></li>
+          <li class="stx-phase" data-phase="up"><span class="stx-phase__num"><i class="fas fa-cloud-upload-alt"></i></span><span class="stx-phase__name">アップロード</span></li>
+          <li class="stx-phase" data-phase="ping"><span class="stx-phase__num"><i class="fas fa-stopwatch"></i></span><span class="stx-phase__name">応答時間</span></li>
+        </ol>
+        <div class="stx-progress"><div class="stx-progress__bar" id="stx-progress-bar"></div></div>
+        <p class="stx-status" id="stx-status">
+          <span class="stx-status__pulse" aria-hidden="true"></span>
+          <span class="stx-status__text">測定準備完了。開始ボタンを押してください。</span>
+        </p>
+        <div class="stx-result" id="stx-result" hidden></div>
+
+        <footer class="stx-tool__footer" aria-label="測定方法論">
+          <div class="stx-tool__footer-cell"><i class="fas fa-stream"></i><span class="stx-tool__footer-key">転送方式</span><span class="stx-tool__footer-val">TCP / HTTPS · WebSocket</span></div>
+          <div class="stx-tool__footer-cell"><i class="fas fa-network-wired"></i><span class="stx-tool__footer-key">インフラ</span><span class="stx-tool__footer-val">Cloudflare + M-Lab NDT7</span></div>
+          <div class="stx-tool__footer-cell"><i class="fas fa-check-circle"></i><span class="stx-tool__footer-key">標準準拠</span><span class="stx-tool__footer-val">TR-296 · RFC-6349</span></div>
+          <div class="stx-tool__footer-cell"><i class="fas fa-user-shield"></i><span class="stx-tool__footer-key">プライバシー</span><span class="stx-tool__footer-val">サーバー保存なし</span></div>
+        </footer>
+
+        <div class="stx-floating-cta" id="stx-floating-cta" aria-hidden="true">
+          <button type="button" class="stx-btn stx-btn--start stx-floating-cta__btn" id="stx-floating-btn">
+            <i class="fas fa-play"></i> 測定開始
+          </button>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<!-- 埋め込みコード生成 -->
+<section class="stx-embed-gen" id="embed-widget" aria-labelledby="stx-embed-title">
+  <h2 class="stx-embed-gen__title" id="stx-embed-title"><i class="fas fa-code"></i> 速度測定ウィジェットを埋め込む</h2>
+  <p class="stx-embed-gen__desc">このウィジェットを自分のサイトに無料で設置できます — HTMLを1行コピー&amp;ペーストするだけ。WordPress・ブログ・サイトビルダー対応。</p>
+  <div class="stx-embed-gen__opts">
+    <span class="stx-embed-gen__opts-label">サイズ</span>
+    <label class="stx-embed-gen__opt"><input type="radio" name="stx-emb-size" value="responsive" checked> レスポンシブ (100%)</label>
+    <label class="stx-embed-gen__opt"><input type="radio" name="stx-emb-size" value="600"> 600 × 800 px</label>
+    <label class="stx-embed-gen__opt"><input type="radio" name="stx-emb-size" value="800"> 800 × 900 px</label>
+  </div>
+  <div class="stx-embed-gen__box">
+    <div class="stx-embed-gen__box-head">
+      <span class="stx-embed-gen__box-label">埋め込みコード (HTML)</span>
+      <button type="button" class="stx-embed-gen__copy-btn" id="stx-emb-copy"><i class="far fa-copy"></i> コピー</button>
+    </div>
+    <pre class="stx-embed-gen__pre" id="stx-emb-output"><code></code></pre>
+  </div>
+  <p class="stx-embed-gen__note"><i class="fas fa-check-circle"></i> 無料・永久利用可 · 申請不要 · 出典リンク (下部) は維持必須</p>
+</section>
+
+<!-- FAQ -->
+<section class="stx-faq" aria-labelledby="stx-faq-title">
+  <h2 class="stx-faq__title" id="stx-faq-title">よくある質問 — ネットワーク速度とパフォーマンス</h2>
+  <div class="stx-faq-list">
+    <details class="stx-faq-item"><summary class="stx-faq-q">オフィスに必要なダウンロード速度はどれくらいですか？</summary><div class="stx-faq-a">5人以上が同時利用するオフィスでは100Mbps以上が推奨されます。ビデオ会議は参加者1人あたり最低10Mbps、4Kストリーミングは1台あたり25Mbpsが必要です。多拠点・コールセンター環境では帯域保証型の専用線が適しています。</div></details>
+    <details class="stx-faq-item"><summary class="stx-faq-q">ビデオ通話に必要なアップロード速度は？</summary><div class="stx-faq-a">Zoom・Microsoft Teams・Google Meetの安定した通話には、同時通話1件あたり最低5Mbpsのアップロード速度が必要です。グループ通話や画面共有には10Mbps以上を推奨します。アップロード速度が低い非対称プランは通話品質低下の主な原因になります。</div></details>
+    <details class="stx-faq-item"><summary class="stx-faq-q">インターネットが遅くなる原因は何ですか？</summary><div class="stx-faq-a">主な原因：ピーク時間帯の回線混雑、ルーターの過負荷・古いファームウェア、Wi-Fi電波干渉、接続端末の多さ、ISPによる速度制限、ケーブルの劣化、局舎からの距離などが挙げられます。この速度測定ツールで問題がローカルネットワーク側かISP回線側かを切り分けることができます。</div></details>
+    <details class="stx-faq-item"><summary class="stx-faq-q">Ping（応答時間・レイテンシ）とは何ですか？</summary><div class="stx-faq-a">Pingはデータパケットの往復時間をミリ秒（ms）で示します。低いほど高速です。20ms以下は優秀、20〜50msは良好、100ms超えはビデオ通話・VoIP・リアルタイムアプリで遅延として体感されます。Pingが高い原因は回線混雑や長い経路が多いです。</div></details>
+    <details class="stx-faq-item"><summary class="stx-faq-q">ジッターとは何ですか？なぜ重要なのですか？</summary><div class="stx-faq-a">ジッターは複数回のPing測定値のばらつきです。安定した接続では10ms以下です。ジッターが30ms以上になると音声・映像が途切れ、パケットロスが発生します。Wi-Fiや混雑した共有ネットワークでジッターが高くなりやすいです。</div></details>
+    <details class="stx-faq-item"><summary class="stx-faq-q">Wi-Fiと有線（LAN）接続で速度が違うのはなぜ？</summary><div class="stx-faq-a">Wi-Fi信号は壁・床などの障害物、近隣ネットワークの電波干渉、ルーターからの距離によって減衰します。有線LANケーブル接続は常にWi-Fiより安定した速度が得られます。オフィスで安定したパフォーマンスが必要な場合は、構内通信工事による有線LAN環境の整備を推奨します。</div></details>
+    <details class="stx-faq-item"><summary class="stx-faq-q">契約速度より実測値が低いのはなぜですか？</summary><div class="stx-faq-a">インターネットの契約速度は「最大値（ベストエフォート）」です。実際の速度は時間帯の回線混雑、ルーター・モデムの性能、同一セグメントの同時利用者数、構内ケーブルの品質、局舎からの距離・媒体によって変動します。共有型ブロードバンドはピーク時に特に速度低下しやすいです。</div></details>
+    <details class="stx-faq-item"><summary class="stx-faq-q">インターネットが遅い時の改善方法は？</summary><div class="stx-faq-a">以下の手順を試してください：（1）ルーターとモデムを再起動。（2）Wi-Fiから有線LANに切り替え。（3）バックグラウンドのダウンロード・更新を停止。（4）ルーターファームウェアを更新。（5）接続端末数を減らす。（6）ケーブルの損傷を確認。これらを試しても改善しない場合はISPに回線点検を依頼してください。</div></details>
+    <details class="stx-faq-item"><summary class="stx-faq-q">この速度測定ツールの精度はどれくらいですか？</summary><div class="stx-faq-a">Cloudflare CDN（200MBダウンロード・3並列ストリーム）とM-Lab NDT7 WebSocket（アップロード）を使用し、複数回計測の平均値を算出します。TR-296・RFC-6349準拠でウォームアップ区間を除外し、安定区間のみで算出するため精度は±1%以内です。最も正確な結果を得るには有線接続・他のトラフィックがない状態でテストしてください。</div></details>
+    <details class="stx-faq-item"><summary class="stx-faq-q">ダウンロード速度とアップロード速度の違いは何ですか？</summary><div class="stx-faq-a">ダウンロード速度はデータを受信する速度で、Webブラウジング・動画視聴・ファイルダウンロード・ソフトウェア更新に影響します。アップロード速度はデータを送信する速度で、ビデオ通話・ファイル共有・クラウドバックアップ・リモートデスクトップに影響します。多くのプランはダウンロード速度が速い非対称型です。動画制作や大容量ファイル転送が多い業務には対称型プランや専用線が適しています。</div></details>
+  </div>
+</section>
+
+</div>
+</main>
+
+<footer class="stx-mini-footer">
+  <p>無料インターネット速度測定 · Powered by <a href="https://www.cloudflare.com" target="_blank" rel="noopener">Cloudflare CDN</a> &amp; <a href="https://www.measurementlab.net" target="_blank" rel="noopener">M-Lab NDT7</a></p>
+</footer>
+
+<script>
+window.STX_STRINGS = {
+    btn_start:        '<i class="fas fa-play"><\/i> 測定開始',
+    btn_running:      '<i class="fas fa-spinner fa-spin"><\/i> 測定中...',
+    btn_done:         '<i class="fas fa-redo"><\/i> 再測定',
+    dl_start:         'ダウンロード測定を開始しています...',
+    mlab_connecting:  'M-Labサーバーに接続中...',
+    ul_start:         'アップロード測定を開始しています...',
+    ul_measuring:     'アップロード中 · M-Lab NDT7 · ',
+    ul_remain:        '秒残',
+    ping_warmup:      '応答時間 (Ping) ウォームアップ中...',
+    ping_measuring:   '応答時間 (Ping) 計測中 ',
+    ping_of:          '/',
+    ping_start:       '応答時間 (Ping) を計測しています...',
+    done:             '測定完了',
+    error_prefix:     'エラー: ',
+    cancelled:        '測定キャンセル',
+    warmup:           'ウォームアップ',
+    steady:           '安定区間',
+    dl_status:        'ダウンロード ',
+    dl_sep:           ' / ',
+    dl_mb:            ' MB · ',
+    mlab_error:       'M-Labサーバーが見つかりません',
+    grade_very_fast:      '非常に速い',
+    grade_very_fast_desc: '専用線クラス — 複数端末の同時使用でも余裕あり',
+    grade_fast:           '速い',
+    grade_fast_desc:      '100Mbps以上 — 一般オフィス・小規模店舗の標準',
+    grade_avg:            '普通',
+    grade_avg_desc:       '30〜100Mbps — 1〜3台の環境では問題なし',
+    grade_slow:           '遅い',
+    grade_slow_desc:      '10〜30Mbps — 複数接続時に混雑感あり',
+    grade_very_slow:      '非常に遅い',
+    grade_very_slow_desc: '10Mbps未満 — 回線点検・交換を推奨',
+    ping_excellent: '優秀',
+    ping_good:      '良好',
+    ping_fair:      '普通',
+    ping_slow:      '遅い',
+    overall_aplus_label: 'エンタープライズ',
+    overall_aplus_desc:  '大容量同時トラフィック・ライブ配信・多拠点運営すべてに対応可能。',
+    overall_a_label:     '非常に優秀',
+    overall_a_desc:      '中規模オフィス・コールセンター・多拠点環境での安定運用が可能。',
+    overall_b_label:     '優秀',
+    overall_b_desc:      '複数端末同時使用の一般オフィスに適しています。',
+    overall_c_label:     '普通',
+    overall_c_desc:      '小規模オフィス・店舗の標準。高負荷時に限界が生じる場合あり。',
+    overall_d_label:     '不十分',
+    overall_d_desc:      '1〜3人の単純作業に限定。回線アップグレードを推奨。',
+    overall_f_label:     '回線点検が必要',
+    overall_f_desc:      '測定値が一般的なインターネット標準速度を大きく下回っています。',
+    res_eyebrow:          '測定結果',
+    res_complete:         '測定完了',
+    res_date_locale:      'ja-JP',
+    res_overall_title:    '総合グレード',
+    res_download:         'ダウンロード',
+    res_upload:           'アップロード',
+    res_ping:             '応答時間 (Ping)',
+    res_ping_min:         '最小',
+    res_ping_max:         '最大',
+    res_ping_replies:     '応答',
+    res_ping_method_label:'Ping測定方式',
+    res_ping_method_val:  'Cloudflare CDN 直接HTTP RTT',
+    res_ping_method_note: 'サーバー経由なし · 6回平均',
+    res_ping_fail:        '測定失敗',
+    res_ping_fail_note:   '一時的なネットワーク障害',
+    res_jitter:           'ジッター',
+    jitter_very_stable:   '非常に安定',
+    jitter_stable:        '安定',
+    jitter_variable:      '変動あり',
+    res_isp:              '接続ISP',
+    res_server:           '測定サーバー',
+    res_ratio:            'Down / Up 比率',
+    res_asymmetric:       '非対称',
+    res_symmetric:        '対称',
+    res_transfer:         '転送量',
+    res_time:             '測定時間',
+    res_sec:              '秒',
+    hide_b2b:             '1',
+};
+window.STX_AI_URL      = 'https://kt-bizinternet.com/pages/ai-recommend.php';
+window.STX_CONSULT_URL = 'https://kt-bizinternet.com/pages/consult.php';
+</script>
+<script src="https://kt-bizinternet.com/assets/pages/speed-test/speed-test.js"></script>
+<script>
+(function(){
+    var BASE  = 'https://kt-bizinternet.com/intl/ja/speed-test';
+    var EMBED = BASE + '?embed=1';
+    function buildCode(){
+        var el = document.querySelector('input[name="stx-emb-size"]:checked');
+        var s  = el ? el.value : 'responsive';
+        var attrs = s==='responsive' ? 'width="100%" height="760"' : s==='600' ? 'width="600" height="800"' : 'width="800" height="900"';
+        return ['<!-- インターネット速度測定ウィジェット (kt-bizinternet.com) -->',
+            '<div style="max-width:100%;margin:1em 0;">',
+            '    <iframe src="'+EMBED+'"',
+            '            '+attrs+' frameborder="0"',
+            '            title="インターネット速度測定" loading="lazy" allowtransparency="true"',
+            '            style="border:0;display:block;max-width:100%;"></iframe>',
+            '    <p style="font-size:12px;color:#64748b;margin:6px 0 0;text-align:center;">',
+            '        <a href="'+BASE+'?utm_source=embed&utm_medium=widget" rel="external noopener" target="_blank"',
+            '           style="color:#0066cc;text-decoration:none;font-weight:600;">インターネット速度測定ツール</a>',
+            '        提供: <a href="https://kt-bizinternet.com" rel="external noopener" target="_blank"',
+            '           style="color:#0066cc;text-decoration:none;font-weight:600;">kt-bizinternet.com</a>',
+            '    </p>',
+            '</div>'].join('\n');
+    }
+    function update(){
+        var el = document.querySelector('#stx-emb-output code');
+        if (el) el.textContent = buildCode();
+    }
+    function copy(){
+        var el  = document.querySelector('#stx-emb-output code');
+        var btn = document.getElementById('stx-emb-copy');
+        if (!el || !btn) return;
+        var text = el.textContent;
+        var done = function(){
+            btn.classList.add('copied');
+            btn.innerHTML = '<i class="fas fa-check"></i> コピーしました';
+            setTimeout(function(){ btn.classList.remove('copied'); btn.innerHTML='<i class="far fa-copy"></i> コピー'; }, 1800);
+        };
+        if (navigator.clipboard && window.isSecureContext) {
+            navigator.clipboard.writeText(text).then(done).catch(function(){ _fb(text); done(); });
+        } else { _fb(text); done(); }
+    }
+    function _fb(t){ var ta=document.createElement('textarea'); ta.value=t; ta.style.cssText='position:fixed;opacity:0'; document.body.appendChild(ta); ta.select(); try{ document.execCommand('copy'); }catch(e){} document.body.removeChild(ta); }
+    document.addEventListener('DOMContentLoaded', function(){
+        document.querySelectorAll('input[name="stx-emb-size"]').forEach(function(r){ r.addEventListener('change', update); });
+        var btn = document.getElementById('stx-emb-copy');
+        if (btn) btn.addEventListener('click', copy);
+        update();
+    });
+})();
+</script>
+</body>
+</html>
